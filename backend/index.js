@@ -1,0 +1,25 @@
+import express from "express";
+import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import db from "./config/Database.js";
+import router from "./routes/userRoute.js";
+dotenv.config();
+const app = express();
+
+try {
+    await db.authenticate();
+    await db.sync();
+    console.log('Database Connected...');
+} catch (error) {
+    console.error(error);
+}
+
+app.use(cors({ credentials:true, origin:'http://localhost:3000' }));
+app.use(cookieParser());
+app.use(express.json());
+app.use(router);
+
+//test
+
+app.listen(8000, ()=> console.log('Server running at port 8000'));

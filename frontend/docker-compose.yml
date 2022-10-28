@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  api:
+    build: ./backend
+    contanier_name: doc_contanier_2
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./backend:/app
+      - ./app/node_modules
+  frontend:
+    build: ./frontend
+    contanier_name: doc_contanier_1
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
+
+
