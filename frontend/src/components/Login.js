@@ -69,7 +69,6 @@ const Login = () => {
                 <p className="has-text-centered mt-3 mb-3 has-text-danger">{errorMsg}</p>
                 <div>
                   <button className="button is-warning is-fullwidth">
-                    {/* <a href='/register'>Register</a> */}
                     <Link to="/register" className="btn btn-info" role="button">
                       Register
                     </Link>
