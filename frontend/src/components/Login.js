@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link,useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 const Login = () => {
@@ -69,7 +69,8 @@ const Login = () => {
                 <p className="has-text-centered mt-3 mb-3 has-text-danger">{errorMsg}</p>
                 <div>
                   <button className="button is-warning is-fullwidth">
-                    <Link href="/register" className="btn btn-info" role="button">
+                    {/* <a href='/register'>Register</a> */}
+                    <Link to="/register" className="btn btn-info" role="button">
                       Register
                     </Link>
                   </button>
